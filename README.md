@@ -124,5 +124,31 @@ simulado_distribuidos/
 Durante o atividade, realizei a analise do codigo e identifique que para resolver o Problema A seria necessário realizar a mudança da
 variavel MAXIMO_SIMULTANEO = 3 para MAXIMO_SIMULTANEO = 2. Assim conseguimos fazer com que somente 2 processos possam ser executado silmultaneamente.
 
+Já para o Problema B, foi preciso realiza a mudar do nome da variavel dentro da função "consultar_estoque" alterando no segundo "if" a variavel "principal" para "replica". Dessa forma conseguimos fazer com que as informações se mantenham atualizadas em ambos os servidores. Tambem foi necessário erxcluir o processo 103 da linha "for numero in [101, 102, 103]" para que a informação aparecesse correta no terminal.
+
+No Problema C, fazendo a alteralção do nome da varial citado no Problema B já resolvemos este problema.
+
+Durante a validação da atividade foi identificado que o resultado esperado estava incorreto:
+=== CENTRAL DE PEDIDOS ===
+Limite simultâneo: 2
+Estoque inicial: 10
+Pedidos confirmados: [101, 102, 103]
+Estoque principal: 7
+Réplica antes: 10
+Réplica depois: 7
+Consulta após falha: REPLICA 7
+
+Como podemos observar, o desafio pede que alteremos de 3 para 2 processos, ou seja, o estoque principal seria 8 após as operações e não 7 alem dos pedidos que deveriam retornar apenas dois numeros, 101 e 102.
+=== CENTRAL DE PEDIDOS ===
+Limite simultâneo: 2
+Estoque inicial: 10
+Pedidos confirmados: [101, 102]
+Estoque principal: 8
+Réplica antes: 10
+Réplica depois: 8
+Consulta após falha: REPLICA 8
+
+Assim ficaria o resultado esperado de forma correta.
+
 
 
